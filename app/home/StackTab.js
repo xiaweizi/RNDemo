@@ -1,29 +1,19 @@
 import React, {Component} from 'react';
 import {
     Image,
-    StyleSheet,
 } from 'react-native';
 import {
     TabNavigator,
     StackNavigator,
-    DrawerNavigator,
 } from 'react-navigation';
 
-//首页的页面
-import Home from 'app/home/src/Home';
-import Type from 'app/home/src/Type';
-import ShopCar from 'app/home/src/ShopCar';
-import Mine from 'app/home/src/Mine';
+import Home from './src/Home';
+import Type from './src/Type';
+import ShopCar from './src/ShopCar';
+import Mine from './src/Mine';
+import Details from './src/Details';
 
-import Details from 'app/home/src/Details';
-//侧滑菜单的页面
-import Wallet from "app/home/drawer/Wallet";
-import CardCoupons from "app/home/drawer/CardCoupons";
-import Invite from "app/home/drawer/Invite";
 
-/**
- * 配置底部标签
- */
 const Tab = TabNavigator({
     //每一个页面的配置
     Home: {
@@ -105,7 +95,7 @@ const Tab = TabNavigator({
         screen: Mine,
         navigationOptions: {
             //stackNavigator的属性
-            headerTitle: '我的',
+            headerTitle: '我的1',
             gestureResponseDistance: {horizontal: 300},
             headerBackTitle: null,
             headerStyle: {backgroundColor: '#EB3695'},//导航栏的样式
@@ -163,11 +153,10 @@ const Tab = TabNavigator({
         }
     },
 });
-
 /*
- * 配置堆栈导航
+ * 初始化StackNavigator
  */
-const Stack = StackNavigator({
+export default Navi = StackNavigator({
     Tab: {
         screen: Tab,
     },
@@ -175,88 +164,4 @@ const Stack = StackNavigator({
         screen: Details,
     },
 
-    //DrawerNavigator跳转的页面也必须在这里注册
-    Wallet: {
-        screen: Wallet,
-    },
-    CardCoupons: {
-        screen: CardCoupons,
-    },
-    Invite: {
-        screen: Invite,
-    },
-});
-
-
-/**
- * 配置侧滑菜单
- */
-export default Drawer = DrawerNavigator({
-    Home: {
-        screen: Stack,
-        navigationOptions: {
-            drawerLabel: '首页',
-            drawerIcon: ({tintColor}) => (
-                <Image
-                    source={{uri: "https://pic2.zhimg.com/v2-8f11b41f995ca5340510c1def1c003d1.jpg"}}
-                    style={[styles.icon, {tintColor: tintColor}]}
-                />
-            ),
-        }
-    },
-    Wallet: {
-        screen: Wallet,
-        navigationOptions: {
-            drawerLabel: '我的钱包',
-            drawerIcon: ({tintColor}) => (
-                <Image
-                    source={{uri: "https://pic2.zhimg.com/v2-8f11b41f995ca5340510c1def1c003d1.jpg"}}
-                    style={[styles.icon, {tintColor: tintColor}]}
-                />
-            ),
-        }
-    },
-    CardCoupons: {
-        screen: CardCoupons,
-        navigationOptions: {
-            drawerLabel: '我的卡券',
-            drawerIcon: ({tintColor}) => (
-                <Image
-                    source={{uri: "https://pic2.zhimg.com/v2-8f11b41f995ca5340510c1def1c003d1.jpg"}}
-                    style={[styles.icon, {tintColor: tintColor}]}
-                />
-            ),
-        }
-    },
-    Invite: {
-        screen: Invite,
-        navigationOptions: {
-            drawerLabel: '邀请好友',
-            drawerIcon: ({tintColor}) => (
-                <Image
-                    source={{uri: "https://pic2.zhimg.com/v2-8f11b41f995ca5340510c1def1c003d1.jpg"}}
-                    style={[styles.icon, {tintColor: tintColor}]}
-                />
-            ),
-        }
-    },
-
-}, {
-    drawerWidth: 250, // 展示的宽度
-    drawerPosition: 'left', // 抽屉在左边还是右边
-    // contentOptions: {
-    //     // activeTintColor: 'black',  // 选中文字颜色
-    //     activeBackgroundColor: '#fff', // 选中背景颜色
-    //     inactiveTintColor: '#EB3695',  // 未选中文字颜色
-    //     inactiveBackgroundColor: '#fff', // 未选中背景颜色
-    //     style: {  // 样式
-    //
-    //     }
-    // },
-});
-const styles = StyleSheet.create({
-    icon: {
-        width: 24,
-        height: 24,
-    }
 });

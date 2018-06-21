@@ -10,7 +10,8 @@ import { AppRegistry } from 'react-native';
 // import VideoPlayPage from "./app/eyepetizer_demo/video_detail/VideoPlayPage";
 // import BlinkTest from "./app/commonTest/BlinkTest";
 // import PizzaTranslator from "./app/commonTest/PizzaTranslator";
-import FlatListViewTest from "./app/scroll_demo/FlatListViewTest";
+// import FlatListViewTest from "./app/scroll_demo/FlatListViewTest";
+// import Main from "./app/home/Main";
 
 // AppRegistry.registerComponent('hello', () => App);
 // AppRegistry.registerComponent('hello', () => FlexDiceTest);
@@ -22,4 +23,8 @@ import FlatListViewTest from "./app/scroll_demo/FlatListViewTest";
 // AppRegistry.registerComponent('hello', () => VideoPlayPage);
 // AppRegistry.registerComponent('hello', () => BlinkTest);
 // AppRegistry.registerComponent('hello', () => PizzaTranslator);
-AppRegistry.registerComponent('hello', () => FlatListViewTest);
+// AppRegistry.registerComponent('hello', () => FlatListViewTest);
+// AppRegistry.registerComponent('hello', () => Main);
+
+import Main from "./app/home/TabNavigator";
+AppRegistry.registerComponent('hello', () => Main);

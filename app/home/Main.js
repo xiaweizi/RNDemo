@@ -10,16 +10,16 @@ import {
 } from 'react-navigation';
 
 //首页的页面
-import Home from 'app/home/src/Home';
-import Type from 'app/home/src/Type';
-import ShopCar from 'app/home/src/ShopCar';
-import Mine from 'app/home/src/Mine';
+import Home from './src/Home';
+import Type from './src/Type';
+import ShopCar from './src/ShopCar';
+import Mine from './src/Mine';
 
-import Details from 'app/home/src/Details';
+import Details from './src/Details';
 //侧滑菜单的页面
-import Wallet from "app/home/drawer/Wallet";
-import CardCoupons from "app/home/drawer/CardCoupons";
-import Invite from "app/home/drawer/Invite";
+import Wallet from "./drawer/Wallet";
+import CardCoupons from "./drawer/CardCoupons";
+import Invite from "./drawer/Invite";
 
 /**
  * 配置底部标签
@@ -28,14 +28,14 @@ const Tab = TabNavigator({
     //每一个页面的配置
     Home: {
         screen: Home,
-        navigationOptions: {
+        navigationOptions: ({navigations}) => ({
             //stackNavigator的属性
             headerTitle: '首页',
             gestureResponseDistance: {horizontal: 300},
-            headerBackTitle: null,
+            headerBackTitle: "返回",
             headerStyle: {backgroundColor: '#EB3695'},//导航栏的样式
             headerTitleStyle: {//导航栏文字的样式
-                color: 'white',
+                color: '#000000',
                 //设置标题的大小
                 fontSize: 16,
                 //居中显示
@@ -49,7 +49,7 @@ const Tab = TabNavigator({
                     style={[{height: 24, width: 24}, {tintColor: tintColor}]}/>
             ),
 
-        },
+        })
     },
     Type: {
         screen: Type,
